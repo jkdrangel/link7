@@ -7,14 +7,14 @@ const styles = {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 }
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Home/>
+      <Home />
     </View>
   )
 }
