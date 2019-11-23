@@ -1,29 +1,25 @@
 import React, { PureComponent } from 'react'
 import { View, Text, Image } from 'react-native'
 import PropTypes from 'prop-types'
-
-const styles = {
-  container: {
-  },
-}
+import styles from './style'
 
 class CardItem extends PureComponent {
   render() {
     const { item: { picture, title, price: { current, installment, nonPromotional } } } = this.props
     return (
-      <View style={styles.container}>
-        <Image source={{ uri: picture }} />
-        <Text>
+      <View style={styles.card}>
+        <Image style={styles.cardImage} source={{ uri: picture }} />
+        <Text style={styles.cardTitle}>
           {title}
         </Text>
-        <Text>
+        <Text style={styles.cardPrice}>
           {current}
-          {nonPromotional && <Text>{nonPromotional}</Text>}
+          {nonPromotional && <Text style={styles.cardNonPromotional}>{nonPromotional}</Text>}
         </Text>
         {
             installment
         && (
-        <Text>
+        <Text style={styles.cardInstallment}>
           {installment}
         </Text>
         )

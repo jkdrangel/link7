@@ -3,11 +3,6 @@ import { View, FlatList } from 'react-native'
 import { getProductsList } from '../../services/api'
 import CardItem from '../../components/card-item'
 
-const styles = {
-  container: {
-  },
-}
-
 const App = () => {
   const [products, setProducts] = useState([])
   const [initialLoading, setLoading] = useState(false)
@@ -19,7 +14,7 @@ const App = () => {
     }
   })
   return (
-    <View style={styles.container}>
+    <View>
       <FlatList
         data={products}
         numColumns={2}
