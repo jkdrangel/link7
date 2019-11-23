@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { View, FlatList } from 'react-native'
 import { getProductsList } from '../../services/api'
 import CardItem from '../../components/card-item'
+import Header from '../../components/header'
 
 const App = () => {
   const [products, setProducts] = useState([])
@@ -15,6 +16,7 @@ const App = () => {
   })
   return (
     <View>
+      <Header />
       <FlatList
         data={products}
         numColumns={2}
