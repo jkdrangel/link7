@@ -1,10 +1,25 @@
 const styles = {
+  row: {
+    flexDirection: 'row',
+  },
   header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     height: 90,
-    paddingTop: 30,
+    marginBottom: 20,
+    paddingTop: 40,
+    backgroundColor: '#fd0061',
   },
   title: {
-    fontSize: 18,
+    color: 'white',
+    fontSize: 22,
+  },
+  icon: {
+    paddingHorizontal: 8,
+  },
+  microfone: {
+    padding: 8,
+    backgroundColor: '#ff0071',
   },
 }
 
