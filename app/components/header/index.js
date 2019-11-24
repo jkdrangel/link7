@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import {
-  View, Text, TextInput, TouchableHighlight,
+  View, Text, TouchableHighlight,
 } from 'react-native'
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons'
+import PropTypes from 'prop-types'
 import styles from './style'
 
-const Header = () => {
+const Header = ({ children }) => {
   const [openSearch, setOpenSearch] = useState(false)
   return (
     <View style={styles.header}>
@@ -16,7 +17,7 @@ const Header = () => {
         <FontAwesome5 name="arrow-left" size={28} color="white" />
       </TouchableHighlight>
       )}
-      {openSearch && <TextInput />}
+      {openSearch && children}
       <View style={styles.row}>
         {!openSearch
         && (
@@ -34,6 +35,10 @@ const Header = () => {
       </View>
     </View>
   )
+}
+
+Header.propTypes = {
+  children: PropTypes.element.isRequired,
 }
 
 export default Header

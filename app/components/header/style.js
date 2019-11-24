@@ -15,10 +15,10 @@ const styles = {
     fontSize: 22,
   },
   icon: {
-    paddingHorizontal: 8,
+    paddingHorizontal: 16,
   },
   microfone: {
-    padding: 8,
+    padding: 16,
     backgroundColor: '#ff0071',
   },
 }

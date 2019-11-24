@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import {
-  View, FlatList, Modal,
+  View, FlatList, Modal, TextInput,
 } from 'react-native'
 import WebView from 'react-native-webview'
-import { getProductsList } from '../../services/api'
+import { getProducts } from '../../services/api'
 import CardItem from '../../components/card-item'
 import Header from '../../components/header'
+import styles from './styles'
 
 const App = () => {
   const [products, setProducts] = useState([])
   const [selected, setSelected] = useState('')
+  const [query, setQuery] = useState('')
   const [modalVisible, setModalVisible] = useState(false)
-  const [initialLoading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    if (!initialLoading) {
-      getProductsList().then((res) => setProducts(res))
+    if (!loading) {
+      getProducts(query).then((res) => setProducts(res))
       setLoading(true)
     }
     if (modalVisible !== !!selected) {
@@ -24,9 +26,16 @@ const App = () => {
   })
   return (
     <View>
-      <Header />
+      <Header>
+        <TextInput
+          style={styles.textInput}
+          autoFocus
+          onSubmitEditing={(evt) => { setQuery(evt.nativeEvent.text); setLoading(false) }}
+        />
+      </Header>
       <FlatList
         data={products}
+        extraData={products}
         numColumns={2}
         renderItem={({ item }) => (
           <CardItem
