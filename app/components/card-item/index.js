@@ -1,22 +1,28 @@
 import React, { PureComponent } from 'react'
-import { View, Text, Image } from 'react-native'
+import {
+  View, Text, Image, TouchableOpacity,
+} from 'react-native'
 import PropTypes from 'prop-types'
 import styles from './style'
 
 class CardItem extends PureComponent {
   render() {
-    const { item: { picture, title, price: { current, installment, nonPromotional } } } = this.props
+    const {
+      item: { picture, title, price: { current, installment, nonPromotional } },
+      onItemClick,
+    } = this.props
     return (
       <View style={styles.card}>
-        <Image style={styles.cardImage} source={{ uri: picture }} />
-        <Text style={styles.cardTitle}>
-          {title}
-        </Text>
-        <Text style={styles.cardPrice}>
-          {current}
-          {nonPromotional && <Text style={styles.cardNonPromotional}>{nonPromotional}</Text>}
-        </Text>
-        {
+        <TouchableOpacity onPress={onItemClick}>
+          <Image style={styles.cardImage} source={{ uri: picture }} />
+          <Text style={styles.cardTitle}>
+            {title}
+          </Text>
+          <Text style={styles.cardPrice}>
+            {current}
+            {nonPromotional && <Text style={styles.cardNonPromotional}>{nonPromotional}</Text>}
+          </Text>
+          {
             installment
         && (
         <Text style={styles.cardInstallment}>
@@ -24,6 +30,7 @@ class CardItem extends PureComponent {
         </Text>
         )
         }
+        </TouchableOpacity>
       </View>
     )
   }
@@ -41,6 +48,7 @@ CardItem.propTypes = {
     id: PropTypes.string.isRequired,
     _link: PropTypes.string.isRequired,
   }).isRequired,
+  onItemClick: PropTypes.func.isRequired,
 }
 
 export default CardItem
