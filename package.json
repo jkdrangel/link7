@@ -10,6 +10,7 @@
     "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
+    "@expo/vector-icons": "^10.0.6",
     "expo": "^35.0.0",
     "prop-types": "^15.7.2",
     "react": "16.8.3",
