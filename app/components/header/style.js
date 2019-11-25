@@ -1,9 +1,8 @@
+import globalStyles from '../../styles/globalStyles'
+
 const styles = {
-  row: {
-    flexDirection: 'row',
-  },
+  ...globalStyles,
   header: {
-    flexDirection: 'row',
     justifyContent: 'space-between',
     height: 90,
     marginBottom: 20,

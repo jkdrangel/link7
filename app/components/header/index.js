@@ -9,7 +9,7 @@ import styles from './style'
 const Header = ({ children }) => {
   const [openSearch, setOpenSearch] = useState(false)
   return (
-    <View style={styles.header}>
+    <View style={[styles.header, styles.row]}>
       {!openSearch && <Text style={styles.title}>Link7</Text>}
       {openSearch
       && (
