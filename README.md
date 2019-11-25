@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Product listings
+> Product listings.
 
 ## Install
 
@@ -16,6 +16,8 @@ yarn
 ```sh
 yarn start
 ```
+
+- Open application on expo app.
 
 ## Author
 
