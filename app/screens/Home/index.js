@@ -30,7 +30,9 @@ const App = () => {
       <Header>
         <TextInput
           style={styles.textInput}
+          autoCapitalize="none"
           autoFocus
+          returnKeyType="search"
           onSubmitEditing={(evt) => { setQuery(evt.nativeEvent.text); setLoading(false) }}
         />
       </Header>
