@@ -35,7 +35,7 @@ const App = () => {
       </Header>
       <FlatList
         data={products}
-        extraData={products}
+        extraData={query}
         numColumns={2}
         renderItem={({ item }) => (
           <CardItem
