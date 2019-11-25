@@ -7,6 +7,7 @@ import { getProducts } from '../../services/api'
 import CardItem from '../../components/card-item'
 import Header from '../../components/header'
 import styles from './styles'
+import FilterBar from '../../components/filter-bar'
 
 const App = () => {
   const [products, setProducts] = useState([])
@@ -33,6 +34,7 @@ const App = () => {
           onSubmitEditing={(evt) => { setQuery(evt.nativeEvent.text); setLoading(false) }}
         />
       </Header>
+      <FilterBar amount={products.length} />
       <FlatList
         data={products}
         extraData={query}
