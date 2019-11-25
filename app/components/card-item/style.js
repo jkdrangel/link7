@@ -15,6 +15,7 @@ const styles = {
   },
   cardTitle: {
     fontSize: 18,
+    fontWeight: 'bold',
     color: '#13a5a4',
   },
   cardPrice: {
